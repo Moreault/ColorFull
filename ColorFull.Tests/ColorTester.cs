@@ -78,10 +78,53 @@ public class ColorTester
             var instance = new Color(250, 128, 114);
 
             //Act
-            var hex = instance.ToHtml();
+            var result = instance.ToHtml();
 
             //Assert
-            hex.Should().Be("#FA8072");
+            result.Should().Be("#FA8072");
+        }
+    }
+
+    [TestClass]
+    public class ExplicitOperator_ToConsoleColor : Tester
+    {
+        [TestMethod]
+        public void WhenIsWhite_ReturnWhite()
+        {
+            //Arrange
+            var instance = new Color(255, 255, 255);
+
+            //Act
+            var result = (ConsoleColor)instance;
+
+            //Assert
+            result.Should().Be(ConsoleColor.White);
+        }
+
+        [TestMethod]
+        public void WhenIsDarkBlue_ReturnDarkBlue()
+        {
+            //Arrange
+            var instance = new Color(0, 22, 85);
+
+            //Act
+            var result = (ConsoleColor)instance;
+
+            //Assert
+            result.Should().Be(ConsoleColor.DarkBlue);
+        }
+
+        [TestMethod]
+        public void WhenIsDarkGreen_ReturnDarkGreen()
+        {
+            //Arrange
+            var instance = new Color(0, 75, 12);
+
+            //Act
+            var result = (ConsoleColor)instance;
+
+            //Assert
+            result.Should().Be(ConsoleColor.DarkGreen);
         }
     }
 }

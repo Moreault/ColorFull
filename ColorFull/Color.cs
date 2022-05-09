@@ -76,4 +76,13 @@ public readonly record struct Color
     public static implicit operator Color(System.Drawing.Color value) => new(value.R, value.G, value.B, value.A);
 
     public static implicit operator System.Drawing.Color(Color value) => System.Drawing.Color.FromArgb(value.Alpha, value.Red, value.Green, value.Blue);
+
+    public static explicit operator ConsoleColor(Color value)
+    {
+        var index = value.Red > 128 | value.Green > 128 | value.Blue > 128 ? 8 : 0;
+        index |= value.Red > 64 ? 4 : 0;
+        index |= value.Green > 64 ? 2 : 0;
+        index |= value.Blue > 64 ? 1 : 0;
+        return (ConsoleColor)index;
+    }
 }
