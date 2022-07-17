@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using Mathemancy.Interpolation;
 
 namespace ToolBX.ColorFull;
 
@@ -53,6 +54,14 @@ public readonly record struct Color
     public Color(double red, double green, double blue, double alpha) : this((byte)red, (byte)green, (byte)blue, (byte)alpha)
     {
 
+    }
+
+    public Color Interpolate(Color target, float progress)
+    {
+        return new((byte)Interpolation.Calculate(Red, target.Red, progress),
+            (byte)Interpolation.Calculate(Green, target.Green, progress),
+            (byte)Interpolation.Calculate(Blue, target.Blue, progress),
+            (byte)Interpolation.Calculate(Alpha, target.Alpha, progress));
     }
 
     /// <summary>
