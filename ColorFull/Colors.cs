@@ -2,7 +2,7 @@
 
 public static class Colors
 {
-    public static readonly Color Transparent = System.Drawing.Color.Transparent;
+    public static readonly Color Transparent = new(0, 0, 0, 0);
     public static readonly Color AliceBlue = System.Drawing.Color.AliceBlue;
     public static readonly Color AntiqueWhite = System.Drawing.Color.AntiqueWhite;
     public static readonly Color Aqua = System.Drawing.Color.Aqua;
