@@ -127,4 +127,10 @@ public class ColorTester
             result.Should().Be(ConsoleColor.DarkGreen);
         }
     }
+
+    [TestClass]
+    public class FromNonPremultiplied : Tester
+    {
+        //TODO Test
+    }
 }
