@@ -80,6 +80,11 @@ public readonly record struct Color
     /// </summary>
     public string ToHtml() => ColorTranslator.ToHtml(System.Drawing.Color.FromArgb(Alpha, Red, Green, Blue));
 
+    public static Color FromNonPremultiplied(int red, int green, int blue, int alpha)
+    {
+        return new(red * alpha / 255, green * alpha / 255, blue * alpha / 255, alpha);
+    }
+
     public override string ToString() => $"{{R: {Red} G: {Green} B: {Blue} A: {Alpha}}}";
 
     public static implicit operator Color(System.Drawing.Color value) => new(value.R, value.G, value.B, value.A);
