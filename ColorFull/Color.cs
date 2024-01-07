@@ -1,8 +1,4 @@
-﻿using System.Drawing;
-using Mathemancy.Interpolation;
-using ToolBX.Mathemancy.Interpolation;
-
-namespace ToolBX.ColorFull;
+﻿namespace ToolBX.ColorFull;
 
 /// <summary>
 /// Represents an RGBA color.
