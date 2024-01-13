@@ -113,7 +113,7 @@ public class ColorTests : Tester
     public void Ensure_ValueEquality() => Ensure.ValueEquality<Color>(Fixture);
 
     [TestMethod]
-    public void Ensure_ConsistentHashCode() => Ensure.ConsistentHashCode<Color>(Fixture);
+    public void Ensure_ValueHashCode() => Ensure.ValueHashCode<Color>(Fixture);
 
     [TestMethod]
     public void Ensure_IsJsonSerializable() => Ensure.IsJsonSerializable<Color>(Fixture);
