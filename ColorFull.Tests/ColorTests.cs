@@ -48,7 +48,7 @@ public class ColorTests : Tester
     public void FromHtml_WhenHexIsInvalidText_Throw()
     {
         //Arrange
-        var hex = Fixture.Create<string>();
+        var hex = Dummy.Create<string>();
 
         //Act
         var action = () => Color.FromHtml(hex);
@@ -110,12 +110,12 @@ public class ColorTests : Tester
     }
 
     [TestMethod]
-    public void Ensure_ValueEquality() => Ensure.ValueEquality<Color>(Fixture);
+    public void Ensure_ValueEquality() => Ensure.ValueEquality<Color>(Dummy);
 
     [TestMethod]
-    public void Ensure_ValueHashCode() => Ensure.ValueHashCode<Color>(Fixture);
+    public void Ensure_ValueHashCode() => Ensure.ValueHashCode<Color>(Dummy, JsonSerializerOptions);
 
     [TestMethod]
-    public void Ensure_IsJsonSerializable() => Ensure.IsJsonSerializable<Color>(Fixture);
+    public void Ensure_IsJsonSerializable() => Ensure.IsJsonSerializable<Color>(Dummy);
 
 }
